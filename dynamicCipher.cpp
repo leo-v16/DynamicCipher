@@ -6,21 +6,6 @@
 #define TIME_SIZE 10
 #define EXTRA 0
 
-// #include <chrono>
-// struct Timer {
-// 	std::chrono::time_point<std::chrono::high_resolution_clock> start, stop;
-
-// 	Timer() {
-// 		start = std::chrono::high_resolution_clock::now();
-// 	}
-
-// 	~Timer() {
-// 		stop = std::chrono::high_resolution_clock::now();
-// 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-// 		std::cout << "\ntime : " << ms.count() << "ms\n";
-// 	}
-// };
-
 class Edata {
     std::string data = "";
     std::string const chars = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_+-={}[]:<,>.?/ "; // len-88
@@ -125,8 +110,7 @@ public:
 };
 
 int main() {
-    // Plain Text must be smaller then 92 charcaters and avoid using special chracter which are not in ascii along with "~, `"
-    // Timer timeit;
+    // Plain Text must be less then 90 charcaters and avoid using special chracter which are not in ascii along with "~, `"
     Edata msg("Hey Ken your OTP is 679954", "K");
     std::cout << msg.GetData("K");
     return 0;
