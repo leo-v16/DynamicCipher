@@ -79,7 +79,7 @@ class Edata {
 
     std::string decrypt_(std::string key, std::string block, std::string ref) {
         block = hashBlock(block, GenerateKey(key, BLOCK_SIZE), true); // unHash that's why true
-        unsigned state = unsigned(std::stoi(block.substr(90, 10)));
+        unsigned state = unsigned(std::stoi(block.substr(BLOCK_SIZE-TIME_SIZE, TIME_SIZE)));
         std::string chars = hashCharSet(ref, state);
         std::string data = "";
         for (int i = 0; i < block.size(); i++) {
